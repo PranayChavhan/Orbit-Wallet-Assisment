@@ -3,6 +3,7 @@ import { StyleSheet, ImageBackground, View, Platform, Dimensions } from 'react-n
 import { ThemedText } from './ThemedText';
 import { Colors } from '@/constants/Colors';
 import { HashtagItem } from '@/constants/types';
+import { useColorScheme } from '@/hooks/useColorScheme.web';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = (width - 10) / 2.5;
@@ -13,6 +14,21 @@ interface HashtagCardProps {
   }
   
   export const HashtagCard = ({ item, onPress }: HashtagCardProps) => {
+
+    const colorScheme = useColorScheme();
+
+    const dynamicStyles = {
+      hashtag: {
+        ...styles.hashtag,
+        color: Colors[colorScheme ?? 'light'].text.white
+      },
+      count: {
+        ...styles.hashtag,
+        color: Colors[colorScheme ?? 'light'].text.white
+      }
+    };
+
+    
   return (
     <View style={styles.cardContainer}>
       <ImageBackground
@@ -21,8 +37,8 @@ interface HashtagCardProps {
         imageStyle={styles.image}
       >
         <View style={styles.overlay}>
-          <ThemedText style={styles.hashtag}>#{item.tag}</ThemedText>
-          <ThemedText style={styles.count}>{item.count}m</ThemedText>
+          <ThemedText style={dynamicStyles.hashtag}>#{item.tag}</ThemedText>
+          <ThemedText style={dynamicStyles.count}>{item.count}m</ThemedText>
         </View>
       </ImageBackground>
     </View>

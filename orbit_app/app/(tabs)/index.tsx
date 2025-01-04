@@ -9,13 +9,28 @@ import { CommunityCard } from '@/components/CommunityCard';
 import { NomadProfile } from '@/components/NomadProfile';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '@/constants/Colors';
+import { useColorScheme } from '@/hooks/useColorScheme.web';
 
 export default function HomeScreen() {
+  const colorScheme = useColorScheme();
+
+    const dynamicStyles = {
+      header: {
+        ...styles.header,
+        color: Colors[colorScheme ?? 'light'].primary
+      },
+      heading: {
+        fontSize: 24,
+        color: Colors[colorScheme ?? 'light'].primary
+      }
+    };
+
+
   const renderSectionHeader = (title: string, showAll?: boolean) => (
     <View style={styles.sectionHeader}>
-      <ThemedText style={styles.heading} type="subtitle">{title}</ThemedText>
+      <ThemedText style={dynamicStyles.heading} type="subtitle">{title}</ThemedText>
       {showAll && (
-        <ThemedText type="link" onPress={() => {}}>
+        <ThemedText darkColor={Colors.dark.primary} lightColor={Colors.light.primary} type="link" onPress={() => {}}>
           See all
         </ThemedText>
       )}
@@ -26,7 +41,7 @@ export default function HomeScreen() {
     <ThemedView style={styles.container}>
       <SafeAreaView edges={['top']}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <ThemedText type="title" style={styles.header}>
+          <ThemedText type="title" style={dynamicStyles.header}>
             Discover the world
           </ThemedText>
           
