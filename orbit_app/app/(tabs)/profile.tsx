@@ -2,11 +2,11 @@ import { StyleSheet } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-export default function HomeScreen() {
+export default function ProfileScreen() {
   return (
 
     <ThemedView style={styles.titleContainer}>
-      <ThemedText>Home Screen</ThemedText>
+      <ThemedText>Profile Screen</ThemedText>
     </ThemedView>
   );
 }
