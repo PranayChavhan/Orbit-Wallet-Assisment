@@ -57,7 +57,7 @@ export default function HomeScreen() {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.horizontalList}
-            data={[...Array(10)].map((_, i) => ({
+            data={[...Array(80)].map((_, i) => ({
               id: i.toString(),
               tag: 'adventure',
               image: `https://picsum.photos/200/200?random=${i}`,
@@ -72,11 +72,11 @@ export default function HomeScreen() {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.horizontalList}
-            data={[...Array(10)].map((_, i) => ({
+            data={[...Array(80)].map((_, i) => ({
               id: i.toString(),
               title: i % 2 === 0 ? 'Places of' : 'We live in',
               subtitle: '@lifestyle',
-              image: `https://picsum.photos/300/400?random=${i + 10}`,
+              image: `https://picsum.photos/300/400?random=${i + 50}`,
               location: i % 2 === 0 ? 'France' : 'Italy',
               postsPerDay: 5 + i
             }))}
@@ -89,11 +89,11 @@ export default function HomeScreen() {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.horizontalList}
-            data={[...Array(10)].map((_, i) => ({
+            data={[...Array(20)].map((_, i) => ({
               id: i.toString(),
               username: `user${i}`,
               avatar: `https://picsum.photos/100/100?random=${i + 20}`,
-              followers: Math.floor(Math.random() * 1000) // Adding followers property
+              followers: Math.floor(Math.random() * 10000) // Adding followers property
             }))}
             renderItem={({ item }) => <NomadProfile profile={item} />}
             keyExtractor={item => item.id}
