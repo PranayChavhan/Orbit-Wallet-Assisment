@@ -13,8 +13,8 @@ This is a React Native app with a **Search Screen** that includes horizontally s
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/pranaychavhan/react-native-search-screen.git
-   cd react-native-search-screen
+   git clone https://github.com/PranayChavhan/Orbit-Wallet-Assisment/orbit_app
+   cd orbit_app
 2. Install dependencies:
    ```bash
    npm install
