@@ -23,6 +23,7 @@ This is a React Native app with a **Search Screen** that includes horizontally s
    npx expo start
 ## QR Code
 Scan to open the app on your device:
+
 ![orbit](https://github.com/user-attachments/assets/e67b4965-6bb9-4d7f-9caa-6fb17912dd8c)
 
 
